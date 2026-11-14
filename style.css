@@ -1,0 +1,90 @@
+* { box-sizing: border-box; }
+:root {
+  --ink: #18251f; --muted: #68756e; --green: #245b45; --green-dark: #194735;
+  --cream: #f7f8f4; --line: #e5e9e2; --orange: #d98b56;
+}
+body { margin: 0; background: #fff; color: var(--ink); font-family: "DM Sans", sans-serif; }
+.topbar { height: 76px; padding: 0 max(calc((100% - 1160px)/2), 6%); display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #edf0eb; }
+.brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); font:800 21px "Manrope",sans-serif; letter-spacing:-.8px; }
+.brand-icon { width:32px; height:32px; display:grid; place-items:center; border-radius:10px; color:white; background:var(--green); font-size:24px; transform:rotate(-20deg); }
+.brand-accent { color:var(--green); }
+.top-note, .eyebrow { font-size:10px; font-weight:700; letter-spacing:2px; color:#87928a; }
+.hero { background:var(--cream); min-height:440px; padding:72px max(calc((100% - 1160px)/2), 6%) 66px; display:flex; align-items:center; justify-content:space-between; overflow:hidden; }
+.hero-content { max-width:570px; position:relative; z-index:2; }
+.eyebrow { color:var(--green); }
+h1 { font:800 clamp(42px,5vw,62px)/1.08 "Manrope",sans-serif; letter-spacing:-2.8px; margin:18px 0 16px; }
+h1 em { color:var(--green); font-style:normal; }
+.hero-content > p { color:#65736b; font-size:15px; line-height:1.75; max-width:490px; margin:0 0 25px; }
+.search-wrap { height:58px; max-width:550px; display:flex; align-items:center; background:#fff; border:1px solid #e3e8e1; border-radius:9px; padding:0 15px; box-shadow:0 8px 24px #1b3b2710; }
+.search-icon { font-size:27px; color:var(--green); margin-right:11px; transform:rotate(-20deg); }
+.search-wrap input { flex:1; min-width:0; border:0; outline:0; font:14px "DM Sans",sans-serif; color:var(--ink); }
+.search-wrap input::placeholder { color:#a1aaa3; }
+.search-wrap kbd { color:#9aa39c; border:1px solid #e8ece6; border-radius:4px; padding:4px 6px; font-size:9px; letter-spacing:1px; }
+.clear-btn { border:0; background:none; font-size:22px; color:#849087; cursor:pointer; margin-right:8px; }
+.hero-hint { margin-top:13px; color:#8b958e; font-size:11px; display:flex; align-items:center; gap:7px; }
+.hint-dot { width:6px; height:6px; border-radius:50%; background:#75a486; }
+.hero-art { width:410px; height:300px; position:relative; margin-right:30px; }
+.art-circle { position:absolute; width:270px; height:270px; border-radius:50%; background:#e6eee5; top:18px; left:72px; }
+.book { position:absolute; bottom:28px; height:210px; width:112px; border-radius:4px 8px 8px 4px; box-shadow:8px 12px 20px #1b332b22; display:flex; flex-direction:column; justify-content:space-between; padding:20px 12px; color:white; font-family:"Manrope",sans-serif; }
+.book b { font-size:17px; line-height:1.12; letter-spacing:-.5px; }
+.book small { font-size:7px; letter-spacing:1px; opacity:.8; }
+.book span { position:absolute; left:7px; top:0; bottom:0; width:2px; background:#ffffff55; }
+.book-one { left:55px; transform:rotate(-13deg); background:#d48c60; height:185px; bottom:40px; }
+.book-two { left:151px; z-index:2; background:#315d4a; height:226px; }
+.book-three { left:249px; transform:rotate(12deg); background:#d9b96e; height:190px; bottom:35px; color:#263a30; }
+.art-spark { position:absolute; color:#d18b58; font-size:30px; }
+.spark-one { top:7px; right:30px; }.spark-two { top:55px; left:35px; font-size:20px; }
+.collection { max-width:1160px; margin:0 auto; padding:65px 0 85px; }
+.section-heading { display:flex; justify-content:space-between; align-items:end; }
+.dark-eyebrow { color:#9aa59d; }
+h2 { font:800 30px "Manrope",sans-serif; letter-spacing:-1px; margin:10px 0 5px; }
+.section-subtitle { color:#849087; font-size:13px; margin:0; }
+.result-count { color:#8b968e; font-size:12px; padding-bottom:5px; }
+.result-count strong { color:var(--green); font-size:22px; margin-right:4px; }
+.toolbar { margin:32px 0 25px; padding-bottom:17px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:18px; align-items:center; }
+.category-filters { display:flex; flex-wrap:wrap; gap:8px; }
+.filter-chip { background:white; border:1px solid #e5eae4; color:#68756e; border-radius:20px; padding:9px 15px; font:600 11px "DM Sans",sans-serif; cursor:pointer; transition:.2s; }
+.filter-chip:hover, .filter-chip.active { background:var(--green); color:white; border-color:var(--green); }
+.availability-filter { display:flex; align-items:center; gap:9px; color:#7b877f; font-size:11px; white-space:nowrap; }
+.availability-filter select { border:1px solid #e5eae4; border-radius:7px; background:white; padding:9px 28px 9px 11px; color:#405047; font:600 11px "DM Sans",sans-serif; outline:none; }
+.book-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+.book-card { border:1px solid #e9ede7; border-radius:10px; overflow:hidden; background:#fff; transition:transform .2s, box-shadow .2s; }
+.book-card:hover { transform:translateY(-4px); box-shadow:0 12px 28px #203d2c12; }
+.cover { height:190px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.cover::before { content:""; position:absolute; width:145px; height:145px; border:1px solid #ffffff55; border-radius:50%; }
+.cover-art { width:105px; height:145px; z-index:1; box-shadow:7px 8px 15px #0002; padding:17px 12px; display:flex; flex-direction:column; justify-content:space-between; color:white; border-radius:2px 5px 5px 2px; font-family:"Manrope",sans-serif; }
+.cover-art strong { font-size:15px; line-height:1.12; letter-spacing:-.5px; }
+.cover-art small { font-size:7px; letter-spacing:1px; opacity:.85; }
+.book-info { padding:16px 16px 17px; }
+.book-category { font-size:9px; font-weight:700; letter-spacing:1.2px; color:#9aa49d; text-transform:uppercase; }
+.book-title { font:700 15px/1.35 "Manrope",sans-serif; margin:8px 0 4px; min-height:40px; }
+.book-author { color:#7f8b83; font-size:11px; margin:0 0 14px; }
+.card-bottom { display:flex; align-items:center; justify-content:space-between; border-top:1px solid #eff1ed; padding-top:12px; }
+.shelf { color:#87928a; font-size:10px; }
+.status { font-size:9px; font-weight:700; border-radius:20px; padding:6px 9px; }
+.status.available { background:#eaf4ed; color:#34704b; }
+.status.borrowed { background:#fbefea; color:#b46b48; }
+.empty-state { text-align:center; padding:60px 20px; color:#7b877f; }
+.empty-icon { font-size:42px; color:#9eafa2; transform:rotate(-20deg); }
+.empty-state h3 { color:var(--ink); font:700 20px "Manrope",sans-serif; margin:12px 0 5px; }
+.empty-state p { font-size:13px; }
+.reset-btn { margin-top:12px; background:var(--green); border:0; color:white; padding:10px 17px; border-radius:6px; cursor:pointer; font-weight:600; }
+footer { background:#f7f8f5; border-top:1px solid #edf0eb; text-align:center; padding:30px 20px; color:#8a958d; }
+.footer-brand { color:var(--ink); font:800 18px "Manrope",sans-serif; }
+footer p { font-size:12px; margin:7px 0 15px; }
+footer > span { font-size:10px; }
+@media (max-width: 900px) {
+  .hero { padding-left:6%; padding-right:6%; }.hero-art { transform:scale(.8); transform-origin:center right; margin-right:-35px; }
+  .collection { padding:55px 6% 70px; }.book-grid { grid-template-columns:repeat(3,1fr); }
+}
+@media (max-width: 650px) {
+  .topbar { height:64px; }.top-note { font-size:8px; }
+  .hero { padding-top:55px; padding-bottom:35px; min-height:0; }.hero-art { display:none; }
+  h1 { font-size:45px; }.hero-content > p { font-size:13px; }
+  .search-wrap { height:54px; }.search-wrap kbd { display:none; }
+  .section-heading { align-items:start; gap:12px; }.section-heading h2 { font-size:24px; }.result-count { white-space:nowrap; }
+  .toolbar { align-items:flex-start; flex-direction:column; }.availability-filter { align-self:flex-end; }
+  .book-grid { grid-template-columns:repeat(2,1fr); gap:12px; }.cover { height:160px; }.cover-art { transform:scale(.88); }
+  .book-info { padding:13px 11px; }.book-title { font-size:13px; }.shelf { font-size:9px; }
+}
+@media (max-width: 360px) { .book-grid { grid-template-columns:1fr; } }
