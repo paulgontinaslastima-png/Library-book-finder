@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find library books by title, author, or category.">
+  <title>Library Book Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Library Book Finder home">
+      <span class="brand-icon">⌕</span>
+      <span>Book<span class="brand-accent">Finder</span></span>
+    </a>
+    <span class="top-note">YOUR LIBRARY, WITHIN REACH</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">DISCOVER YOUR NEXT READ</span>
+        <h1>Find the book<br><em>you’re looking for.</em></h1>
+        <p>Search the library collection by title, author, or category. Check availability before you head to the shelves.</p>
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search by title, author, or keyword..." autocomplete="off">
+          <button id="clearSearch" class="clear-btn" aria-label="Clear search" hidden>×</button>
+          <kbd>ENTER</kbd>
+        </div>
+        <div class="hero-hint"><span class="hint-dot"></span> Search across our sample collection</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle"></div>
+        <div class="book book-one"><span></span><b>THE<br>CREATIVE<br>MIND</b><small>IDEAS &amp; INSPIRATION</small></div>
+        <div class="book book-two"><span></span><b>THE<br>ART OF<br>LEARNING</b><small>GROW EVERY DAY</small></div>
+        <div class="book book-three"><span></span><b>WILD<br>PLACES</b><small>A FIELD GUIDE</small></div>
+        <div class="art-spark spark-one">✳</div><div class="art-spark spark-two">✦</div>
+      </div>
+    </section>
+
+    <section class="collection">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow dark-eyebrow">THE COLLECTION</span>
+          <h2>Browse library books</h2>
+          <p class="section-subtitle">Find a title that fits your curiosity.</p>
+        </div>
+        <div class="result-count"><strong id="resultCount">0</strong><span> books found</span></div>
+      </div>
+
+      <div class="toolbar">
+        <div id="categoryFilters" class="category-filters" aria-label="Filter by category">
+          <button class="filter-chip active" data-category="All">All books</button>
+          <button class="filter-chip" data-category="Technology">Technology</button>
+          <button class="filter-chip" data-category="Science">Science</button>
+          <button class="filter-chip" data-category="Fiction">Fiction</button>
+          <button class="filter-chip" data-category="History">History</button>
+          <button class="filter-chip" data-category="Business">Business</button>
+        </div>
+        <label class="availability-filter">
+          <span>Availability</span>
+          <select id="availabilityFilter">
+            <option value="All">All books</option>
+            <option value="Available">Available only</option>
+            <option value="Borrowed">Borrowed only</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="bookGrid" class="book-grid"></div>
+      <div id="emptyState" class="empty-state" hidden>
+        <div class="empty-icon">⌕</div>
+        <h3>No books found</h3>
+        <p>Try a different title, author, or category.</p>
+        <button id="resetFilters" class="reset-btn">Clear filters</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">Book<span class="brand-accent">Finder</span></div>
+    <p>A simpler way to find your next great read.</p>
+    <span>© 2026 Library Book Finder · Sample collection for demonstration</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
